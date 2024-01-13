@@ -1,0 +1,13 @@
+.backgroundBlur {
+	background-color: rgb(241, 245, 249);
+	background-image: radial-gradient(
+			at 16% 0%,
+			rgb(253, 164, 175) 0,
+			transparent 50%
+		),
+		radial-gradient(at 17% 47%, rgb(251, 113, 133) 0, transparent 52%),
+		radial-gradient(at 76% 0%, rgb(251, 113, 133) 0, transparent 50%),
+		radial-gradient(at 0% 50%, rgb(59, 130, 246) 0, transparent 100%),
+		radial-gradient(at 81% 22%, rgb(9, 54, 152) 0, transparent 100%),
+		radial-gradient(at 56% 55%, rgb(3, 55, 118) 0, transparent 100%);
+}
