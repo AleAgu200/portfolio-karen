@@ -3,6 +3,7 @@ import Section from "@/components/Section";
 import Image from "next/image";
 import { Alert } from "flowbite-react";
 import Footer from "@/components/Footer";
+import { cloudinaryV2 } from "@/lib/utils";
 
 export default function Home() {
 	type content = {
@@ -60,7 +61,7 @@ export default function Home() {
 			title: "posters",
 			content: [
 				{
-					src: "https://1drv.ms/i/s!AhUcrWZqtQ_bikZB18rqSYZJYFoI?e=dpPPfN",
+					src: "/imagenes/5/19119935.png",
 					text: "creación de ilustración vectorial y creación de tipografía",
 					link: "",
 				},

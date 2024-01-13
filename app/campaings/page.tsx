@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	motion,
 	useScroll,
@@ -9,63 +9,40 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { cloudinaryV2 } from "@/lib/utils";
 
 export const HeroParallax = () => {
-	const products = [
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/960X1200.png",
+	const variants = {
+		enter: (direction: number) => {
+			return {
+				x: direction > 0 ? 1000 : -1000,
+				opacity: 0,
+			};
 		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/1200x628 1.png",
+		center: {
+			zIndex: 1,
+			x: 0,
+			opacity: 1,
 		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/Carrusel 1.png",
+		exit: (direction: number) => {
+			return {
+				zIndex: 0,
+				x: direction < 0 ? 1000 : -1000,
+				opacity: 0,
+			};
 		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/Carrusel 2.png",
-		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/Carrusel 3.png",
-		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/960X1200.png",
-		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/960X1200.png",
-		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/960X1200.png",
-		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/960X1200.png",
-		},
-		{
-			title: "Product 1",
-			link: "/",
-			thumbnail: "/imagenes/1/campañas/conecta/960X1200.png",
-		},
-	];
-	const firstRow = products.slice(0, 5);
-	const secondRow = products.slice(5, 10);
-	const thirdRow = products.slice(10, 15);
+	};
+	const [products, setProducts] = useState([]);
+	useEffect(() => {
+		fetch("/api/hello")
+			.then((response) => response.json())
+			.then((data) => setProducts(data))
+			.catch((error) => console.error(error));
+	}, []);
+	const firstRow = products.slice(0, 6);
+	const secondRow = products.slice(6, 13);
+	const thirdRow = products.slice(1, 16);
+
 	const ref = React.useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -121,16 +98,16 @@ export const HeroParallax = () => {
 						<ProductCard
 							product={product}
 							translate={translateX}
-							key={product.title + Math.random()}
+							key={product.id}
 						/>
 					))}
 				</motion.div>
-				<motion.div className='flex flex-row  mb-20 space-x-20 '>
+				<motion.div className='flex flex-row mb-20 space-x-20 '>
 					{secondRow.map((product) => (
 						<ProductCard
 							product={product}
 							translate={translateXReverse}
-							key={product.title}
+							key={product.id}
 						/>
 					))}
 				</motion.div>
@@ -139,7 +116,7 @@ export const HeroParallax = () => {
 						<ProductCard
 							product={product}
 							translate={translateX}
-							key={product.title}
+							key={product.id}
 						/>
 					))}
 				</motion.div>
@@ -150,7 +127,7 @@ export const HeroParallax = () => {
 
 export const Header = () => {
 	return (
-		<div className='max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0'>
+		<div className='max-w-7xl relative mx-auto py-20 px-4 w-full  left-0 top-0'>
 			<h1 className='text-2xl md:text-7xl font-bold dark:text-white'>
 				The Ultimate <br /> development studio
 			</h1>
@@ -193,13 +170,13 @@ export const ProductCard = ({
 					src={product.thumbnail}
 					height='600'
 					width='600'
-					className='object-cover object-left-top absolute h-full w-full inset-0'
+					className='object-cover object-left-top absolute h-full w-full inset-0 sm:h-auto sm:w-auto sm:object-contain '
 					alt={product.title}
 				/>
 			</Link>
 			<div className='absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none'></div>
 			<h2 className='absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white'>
-				{product.title}
+				{"Haz click para ver el proyecto"}
 			</h2>
 		</motion.div>
 	);
