@@ -22,18 +22,18 @@ export default function Home() {
 			content: [
 				{
 					src: "https://res.cloudinary.com/db83h8roo/image/upload/v1705169743/1/campa%C3%B1as/conecta/Carrusel_1_wadoro.png",
-					text: "¡Explora la creatividad en cada diseño! Como diseñadora, ofrezco campañas visuales únicas que cautivan y destacan",
-					link: "",
+					text: "¡Explora la creatividad en cada diseño! Ofrezco campañas visuales únicas que destacan.",
+					link: "/campaings",
 				},
 				{
 					src: "https://res.cloudinary.com/db83h8roo/image/upload/v1705169757/1/campa%C3%B1as/gen%20SMART/KV_Devices_amigas_1200x1200_2_lw7r8i.png",
-					text: "¡Explora la creatividad en cada diseño! Como diseñadora, ofrezco campañas visuales únicas que cautivan y destacan",
-					link: "",
+					text: "¡Explora la creatividad en cada diseño! Ofrezco campañas visuales únicas que destacan.",
+					link: "/campaings",
 				},
 				{
 					src: "https://res.cloudinary.com/db83h8roo/image/upload/v1705169747/1/campa%C3%B1as/EMPRENDE/bowls_wip56v.png",
-					text: "¡Explora la creatividad en cada diseño! Como diseñadora, ofrezco campañas visuales únicas que cautivan y destacan",
-					link: "",
+					text: "¡Explora la creatividad en cada diseño! Ofrezco campañas visuales únicas que destacan.",
+					link: "/campaings",
 				},
 			],
 		},
