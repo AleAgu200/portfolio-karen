@@ -13,7 +13,7 @@ export default function Home() {
 	};
 	type SectionType = {
 		title: string;
-		content: [content, content, content];
+		contentArray: [content, content, content];
 	};
 
 	let sections: SectionType[] = [
