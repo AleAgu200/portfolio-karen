@@ -12,6 +12,12 @@ import Link from "next/link";
 import ImageGallery from "./GridImages";
 
 export const HeroParallax = () => {
+	type product = {
+		id: string;
+		title: string;
+		link: string;
+		thumbnail: string;
+	};
 	const [products, setProducts] = useState([]);
 	useEffect(() => {
 		fetch("/api/hello")
@@ -75,7 +81,7 @@ export const HeroParallax = () => {
 					className=''
 				>
 					<motion.div className='flex flex-row-reverse space-x-reverse space-x-20 mb-20'>
-						{firstRow.map((product) => (
+						{firstRow.map((product: product) => (
 							<ProductCard
 								product={product}
 								translate={translateX}
@@ -84,7 +90,7 @@ export const HeroParallax = () => {
 						))}
 					</motion.div>
 					<motion.div className='flex flex-row mb-20 space-x-20 '>
-						{secondRow.map((product) => (
+						{secondRow.map((product: product) => (
 							<ProductCard
 								product={product}
 								translate={translateXReverse}
@@ -93,7 +99,7 @@ export const HeroParallax = () => {
 						))}
 					</motion.div>
 					<motion.div className='flex flex-row-reverse space-x-reverse space-x-20'>
-						{thirdRow.map((product) => (
+						{thirdRow.map((product: product) => (
 							<ProductCard
 								product={product}
 								translate={translateX}

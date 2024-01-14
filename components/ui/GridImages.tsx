@@ -1,6 +1,9 @@
 import { CldImage } from "next-cloudinary";
 
-const ImageGallery = ({ imagesIds }) => {
+type ImageGalleryProps = {
+	imagesIds: string[];
+};
+const ImageGallery = ({ imagesIds }: ImageGalleryProps) => {
 	return (
 		<div className='grid grid-cols-3 grid-rows-16 gap-4 w-full h-auto px-20%'>
 			<div className='bg-slate-500 row-span-2'>

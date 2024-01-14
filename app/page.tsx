@@ -19,7 +19,7 @@ export default function Home() {
 	let sections: SectionType[] = [
 		{
 			title: "Campaña",
-			content: [
+			contentArray: [
 				{
 					src: "https://res.cloudinary.com/db83h8roo/image/upload/v1705169743/1/campa%C3%B1as/conecta/Carrusel_1_wadoro.png",
 					text: "¡Explora la creatividad en cada diseño! Ofrezco campañas visuales únicas que destacan.",
@@ -39,7 +39,7 @@ export default function Home() {
 		},
 		{
 			title: "Ilustración",
-			content: [
+			contentArray: [
 				{
 					src: "https://res.cloudinary.com/db83h8roo/image/upload/v1705169686/3/Mesa_de_trabajo_9Zendaya_dbsxuf.jpg",
 					text: "creación de ilustración vectorial personalizada a partir de una fotografía",
@@ -59,7 +59,7 @@ export default function Home() {
 		},
 		{
 			title: "posters",
-			content: [
+			contentArray: [
 				{
 					src: "/imagenes/5/19119935.png",
 					text: "creación de ilustración vectorial y creación de tipografía",
@@ -79,7 +79,7 @@ export default function Home() {
 		},
 		{
 			title: "Multimedia",
-			content: [
+			contentArray: [
 				{
 					src: "https://res.cloudinary.com/db83h8roo/video/upload/v1705018536/b5hbl05qnqt4cdyeuae7.mp4",
 					text: "Creacion de video multimedia",
@@ -99,7 +99,7 @@ export default function Home() {
 		},
 		{
 			title: "Editorial",
-			content: [
+			contentArray: [
 				{
 					src: "/imagenes/3/Mesa de trabajo 7Ale.jpg",
 					text: "creación de ilustración vectorial y de portada de revista personalizada",

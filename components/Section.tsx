@@ -11,7 +11,7 @@ type content = {
 };
 type SectionType = {
 	title: string;
-	content: [content, content, content];
+	contentArray: [content, content, content];
 };
 
 type SectionProps = {
@@ -26,7 +26,7 @@ const Section: React.FC<SectionProps> = ({ section }) => {
 			</p>
 
 			<div className='flex lg:flex-row flex-col gap-[4rem] justify-center items-center'>
-				{section.content.map((item, index) => (
+				{section.contentArray.map((item, index) => (
 					<ListItem
 						key={index}
 						src={item.src}
