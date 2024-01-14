@@ -9,8 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import GridGallery from "./grid";
-import ImageGallery from "./grid";
+import ImageGallery from "./GridImages";
 
 export const HeroParallax = () => {
 	const [products, setProducts] = useState([]);
@@ -61,9 +60,9 @@ export const HeroParallax = () => {
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ duration: 2 }}
+				transition={{ duration: 1, ease: "easeInOut" }}
 				ref={ref}
-				className='h-[300vh] py-10 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]'
+				className='h-[255vh] py-10 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]'
 			>
 				<Header />
 				<motion.div
@@ -104,14 +103,15 @@ export const HeroParallax = () => {
 					</motion.div>
 				</motion.div>
 			</motion.div>
-			<ImageGallery />
+			{/* 			<ImageGallery />
+			 */}{" "}
 		</div>
 	);
 };
 
 export const Header = () => {
 	return (
-		<div className='max-w-7xl relative mx-auto py-5 px-4 w-full  left-0 top-0'>
+		<div className='max-w-7xl relative mx-auto px-4 w-full  left-0 top-0'>
 			<h1 className='text-2xl md:text-7xl font-bold dark:text-white'>
 				Campañas realizadas por la diseñadora gráfica{" "}
 				<span className='text-primary-500'>Karen Andino</span>
